@@ -7,7 +7,7 @@ import pandas as pd
 from feature_extraction import extract_features, feature_columns
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "Predict", "model", "xgb_model.plk")
+MODEL_PATH = os.path.join(BASE_DIR, "Predict", "model", "xgb_model.pkl")
 SCHEMA_PATH = os.path.join(BASE_DIR, "Predict", "model", "feature_schema.json")
 
 app = FastAPI()
@@ -65,3 +65,4 @@ async def predict(input_data: URLRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5000)
+
